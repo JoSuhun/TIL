@@ -136,3 +136,33 @@ print(arr)
 
 for i in zip(arr[0], arr[1], arr[2]):
     print(list(i))
+
+
+# [lambda]
+
+lst1 = [1,2,3,4,5]
+lst2 = [6,7,8,9,10]
+
+# ver1
+lst3 = [0]*5
+for i in range(5):
+    lst3[i] = lst1[i] + lst2[i]
+print(*lst3)
+
+# ver2
+result = (lambda x,y : x+y)
+lst3=map(result, lst1, lst2)
+print(*lst3)                # 캡 신기
+
+
+#[재귀함수]
+
+def abc(level):
+    if level == 2:
+        return
+
+    print(level, end=' ')
+    abc(level+1)
+    print(level, end=' ')
+
+abc(0)
