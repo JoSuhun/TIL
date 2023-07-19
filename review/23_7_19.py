@@ -155,7 +155,7 @@ lst3=map(result, lst1, lst2)
 print(*lst3)                # 캡 신기
 
 
-#[재귀함수]
+#[재귀함수]             # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 def abc(level):
     if level == 2:
@@ -165,4 +165,4 @@ def abc(level):
     abc(level+1)
     print(level, end=' ')
 
-abc(0)
+abc(0)                          # ! ! ! 복잡하다 ㅡㅡ 생각 생각 복습 복습
