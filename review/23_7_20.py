@@ -15,4 +15,4 @@ for index, fruit in enumerate(fruits):
 # fruits리스트의 'cherry'가 몇 번째 인덱스인지 알고싶다!!
 for index, fruit in enumerate(fruits):
     if fruit == 'cherry':
-        print(index)
+        print(index)    # 2 ... 알고리즘 풀이에 유용할 거 같음
