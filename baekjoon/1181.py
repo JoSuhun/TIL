@@ -4,11 +4,11 @@ words = [str(input()) for _ in range(T)]
 words_set = list(set(words))
 
 
-words_sorted = []
+words_len = []
 for word in words_set:
-    words_sorted.append((len(word), word))
+    words_len.append((len(word), word))
 
-result = sorted(words_sorted)
+words_sorted = sorted(words_len)
 
-for len_word, word in result:
+for len_word, word in words_sorted:
     print(word)
