@@ -252,5 +252,5 @@ print(f'{ret[0][0]}가 {ret[0][1]}번 사용됨')        # a가 3번 사용됨
 # 문자열의 덧셈과 뺄셈
 a = Counter('apple')
 b = Counter('mango')
-print(a + b)
-print(a - b)
+print(a + b)        # Counter({'a': 2, 'p': 2, 'l': 1, 'e': 1, 'm': 1, 'n': 1, 'g': 1, 'o': 1})
+print(a - b)        # Counter({'p': 2, 'l': 1, 'e': 1})
