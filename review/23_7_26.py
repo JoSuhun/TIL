@@ -41,3 +41,66 @@ class Person:
 person1 = Person("Alice", 25)
 person1.introduce()
 print(Person.number_of_people)
+
+
+# Review (^ - ^)
+
+# 매직 메서드
+
+class car:
+    def __init__(self,name,price):
+        self.name = name
+        self.price = price
+    
+    def __add__(self,another):
+        return self.price + another.price
+
+kia = car('k8',500)
+bmw = car('m8',100)
+
+print(kia.price + bmw.price)
+
+# deco
+
+def deco(fnc):
+    def wrapper(value):
+        print('뉴진스'*3)
+        fnc(value)
+        print('하입보이'*3)
+    return wrapper
+
+@deco
+def call_name(name):
+    print(name)
+
+@deco
+def call_age(age):
+    print(age)
+
+call_name('수훈이')
+
+# 정적 메서드
+
+class car:
+
+    @staticmethod
+    def add_price(one, another):
+        print(one+another)
+
+car.add_price(400, 80000)
+
+# 클래스 메서드
+
+class make_pie:
+    cnt = 0
+    def __init__(self, name):
+        self.name = name
+        make_pie.cnt+=1
+    
+    @classmethod
+    def number_of_pies(cls):
+        print(f'파이를 {cls.cnt}명이 만들고 있다 ㅇㅅㅇ')
+
+a = make_pie('sh')
+b = make_pie('hs')
+make_pie.number_of_pies()
