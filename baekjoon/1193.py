@@ -13,3 +13,7 @@ if i % 2 == 1:
     print(f'{i-1-cnt}/{1+cnt}')
 else:
     print(f'{1+cnt}/{i-1-cnt}')
+
+
+
+# 아직 이해 못했음
