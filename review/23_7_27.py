@@ -122,3 +122,4 @@ except ZeroDivisionError:
     print('0은 넣지 말아야지')
 except:
     print('에러야')
+
