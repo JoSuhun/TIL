@@ -1,10 +1,4 @@
 st = input()
-<<<<<<< HEAD
-st_lst = list(st)
-sorted_lst = sorted(st_lst)
-sorted_lst[0]
-=======
->>>>>>> 4af8427d0ee573b183c71e0f6350cac8c1823cfb
 
 lst = []
 
