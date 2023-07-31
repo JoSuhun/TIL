@@ -1,4 +1,4 @@
-for tc in range(100):
+for tc in range(10):
 
     result_lst = []
 
