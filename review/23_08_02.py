@@ -146,23 +146,23 @@
 #         if arrs[i][j:j+3] == pattern:
 #             print(i,j)
 
-# lst=[[1 ,2 ,3 ,4 ,5],
-#      [2 ,4 ,2 ,1 ,3],
-#      [3 ,4 ,5 ,2 ,5]]
+lst=[[1 ,2 ,3 ,4 ,5],
+     [2 ,4 ,2 ,1 ,3],
+     [3 ,4 ,5 ,2 ,5]]
 
-# target=[3, 4, 5]
+target=[3, 4, 5]
 
-# def isPattern(y,x):
-#     for i in range(3):
-#         if target[i]!=lst[y][x+i]:
-#             return 0
-#     return 1
+def isPattern(y,x):
+    for i in range(3):
+        if target[i]!=lst[y][x+i]:
+            return 0
+    return 1
 
-# for i in range(3):
-#     for j in range(3):
-#         ret=isPattern(i,j)
-#         if ret:
-            # print(i,j)
+for i in range(3):
+    for j in range(3):
+        ret=isPattern(i,j)
+        if ret:
+            print(i,j)
 
 # lst=[[1 ,2 ,3 ,4 ,5],
 #      [2 ,4 ,2 ,1 ,3],
