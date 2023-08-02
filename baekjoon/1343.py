@@ -1,40 +1,19 @@
-# 폴리오미노, AAAA, BB
-
 board = input()
 board_lst = list(board.split('.'))
 
-result = []
+flag = 0
 
-for x in board_lst:
-
-    if x == '':
-        pass
-    elif len(x) % 4 == 0:
-        x = 'AAAA' * (len(x)//4)
-    elif len(x) % 6 == 0 or len(x) % 10 == 0:
-        x = ('AAAA' * (len(x)//4)) + 'BB'
-    elif len(x) % 2 == 0:
-        x = 'BB'
+for i in range(len(board_lst)):
+    if len(board_lst[i]) % 4 == 0:
+        board_lst[i] = 'AAAA' * (len(board_lst[i])//4)
+    elif len(board_lst[i]) % 4 == 2:
+        board_lst[i] = 'AAAA' * (len(board_lst[i])//4) + 'BB'
+    elif len(board_lst[i]) % 2 == 0:
+        board_lst[i] = 'BB' * (len(board_lst[i])//2)
     else:
-        x = 'NO'
+        flag = 1
 
-    result.append(x)
-
-result = '.'.join(result)
-
-
-cnt = 0
-for _ in result:
-    if _ == '.':
-        cnt += 1
-
-
-if cnt == len(result):
-    print('.'*len(result))
-elif 'NO' in result:
-    print('-1')
+if flag == 1:
+    print(-1)
 else:
-    print(result)
-
-
-# 반례 못찾겠음 흑흑
+    print(*board_lst, sep='.')
