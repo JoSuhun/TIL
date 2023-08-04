@@ -1,5 +1,6 @@
 T = int(input())
 
+<<<<<<< HEAD
 for tc in range(1,T+1):
     N = int(input())
     nums = list(map(int, input().split()))
@@ -19,3 +20,13 @@ for tc in range(1,T+1):
     
     print(f'#{tc}',*new_nums)
 
+=======
+for tc in range(T):
+
+    N = int(input())
+    nums = list(map(int, input().split()))
+
+    new_nums = []
+
+    
+>>>>>>> 82c4633c19b810c280f46bf68cae1a4cd2ac9c7a

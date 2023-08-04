@@ -1,13 +1,11 @@
-# # 입력받은 배열에서 +모양으로 더한 합의 최댓값은 무엇
-#
-#
-#
+# # 1. 입력받은 배열에서 +모양으로 더한 합의 최댓값은 무엇
+
 # arr = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 # N = len(arr)
-#
+
 # di = [0, 1, 0, -1]
 # dj = [1, 0, -1, 0]
-#
+
 # max_v = 0
 # for i in range(N):
 #     for j in range(N):
@@ -20,24 +18,36 @@
 #         # + 모양 인접 원소를 포함한 합
 #         if max_v < s:
 #             max_v = s
-#
-#
-# max_v = 0
-# m = 2   # +모양이 커졌어! 좌우 각각 중심 포함 길이가 m이야
-# for i in range(N):
-#     for j in range(N):
-#         # arr[i][j]를 중심으로
-#         s = arr[i][j]
-#         for k in range(4):
-#             for p in range(1, m):       # 늘어난 m길이 만큼 +를 늘여주자!
-#                 ni, nj = i+di[k]*p, j+dj[k]*p
-#                 if 0 <= ni < N and 0 <= nj < N:
-#                     s += arr[ni][nj]
-#         # + 모양 인접 원소를 포함한 합
-#         if max_v < s:
-#             max_v = s
-#
-#
+
+# print(max_v)
+
+
+
+
+
+
+# # 2. +모양이 커졌어! 좌우 각각 중심 포함 길이가 m이야
+
+max_v = 0
+m = 2   
+for i in range(N):
+    for j in range(N):
+        # arr[i][j]를 중심으로
+        s = arr[i][j]
+        for k in range(4):
+            for p in range(1, m):       # 늘어난 m길이 만큼 +를 늘여주자!
+                ni, nj = i+di[k]*p, j+dj[k]*p
+                if 0 <= ni < N and 0 <= nj < N:
+                    s += arr[ni][nj]
+        # + 모양 인접 원소를 포함한 합
+        if max_v < s:
+            max_v = s
+
+
+
+
+
+
 # # 전치 행렬
 # arrs = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 #
@@ -146,70 +156,70 @@
 #         if arrs[i][j:j+3] == pattern:
 #             print(i,j)
 
-lst=[[1 ,2 ,3 ,4 ,5],
-     [2 ,4 ,2 ,1 ,3],
-     [3 ,4 ,5 ,2 ,5]]
-
-target=[3, 4, 5]
-
-def isPattern(y,x):
-    for i in range(3):
-        if target[i]!=lst[y][x+i]:
-            return 0
-    return 1
-
-for i in range(3):
-    for j in range(3):
-        ret=isPattern(i,j)
-        if ret:
-            print(i,j)
-
 # lst=[[1 ,2 ,3 ,4 ,5],
 #      [2 ,4 ,2 ,1 ,3],
 #      [3 ,4 ,5 ,2 ,5]]
-# target = [[3,4],
-#           [2,1]]
+
+# target=[3, 4, 5]
 
 # def isPattern(y,x):
-#     for i in range(2):
-#         for j in range(2):
-#             if target[i][j]!=lst[y+i][x+j]:
-#                 return 0
+#     for i in range(3):
+#         if target[i]!=lst[y][x+i]:
+#             return 0
 #     return 1
 
-# for i in range(2):
-#     for j in range(4):
-#         ret = isPattern(i,j)
+# for i in range(3):
+#     for j in range(3):
+#         ret=isPattern(i,j)
 #         if ret:
 #             print(i,j)
 
-#
-#
-arrs = [[1,5,4,2],
-        [1,3,4,2],
-        [3,5,3,2],
-        [2,6,4,1]]
+lst=[[1 ,2 ,3 ,4 ,5],
+     [2 ,4 ,2 ,1 ,3],
+     [3 ,4 ,5 ,2 ,5]]
+target = [[3,4],
+          [2,1]]
 
-# ***
-# ***
-
-MAX = 0
-
-def getSum(y,x):
-    SUM = 0
-
+def isPattern(y,x):
     for i in range(2):
-        for j in range(3):
-            SUM += arrs[y+i][x+j]
-    return SUM
+        for j in range(2):
+            if target[i][j]!=lst[y+i][x+j]:
+                return 0
+    return 1
 
-for i in range(3):
-    for j in range(2):
-        ret = getSum(i,j)
-        if ret > MAX:
-            MAX = ret
+for i in range(2):
+    for j in range(4):
+        ret = isPattern(i,j)
+        if ret:
+            print(i,j)
 
-print(MAX)
+#
+#
+# arrs = [[1,5,4,2],
+#         [1,3,4,2],
+#         [3,5,3,2],
+#         [2,6,4,1]]
+
+# # ***
+# # ***
+
+# MAX = 0
+
+# def getSum(y,x):
+#     SUM = 0
+
+#     for i in range(2):
+#         for j in range(3):
+#             SUM += arrs[y+i][x+j]
+#     return SUM
+
+# for i in range(3):
+#     for j in range(2):
+#         ret = getSum(i,j)
+#         if ret > MAX:
+#             MAX = ret
+
+# print(MAX)
 #
 #
 #
@@ -247,28 +257,28 @@ print(MAX)
 # --------------------------------------------------------------
 
 
-A = [4,7,1,4,2,4,3]
+# A = [4,7,1,4,2,4,3]
 
-bucket = [0]*11
+# bucket = [0]*11
 
-for a in A:
-    bucket[a] += 1
+# for a in A:
+#     bucket[a] += 1
 
-print(bucket)
+# print(bucket)
 
-for i in range(len(bucket)-1):
-    bucket[i+1]+=bucket[i]
+# for i in range(len(bucket)-1):
+#     bucket[i+1]+=bucket[i]
 
-print(bucket)
+# print(bucket)
 
-result = [0]*7
+# result = [0]*7
 
-for i in range(len(A)):
-    bucket[A[i]]-=1
-    index=bucket[A[i]]
-    result[index]=A[i]
+# for i in range(len(A)):
+#     bucket[A[i]]-=1
+#     index=bucket[A[i]]
+#     result[index]=A[i]
 
-print(result)
+# print(result)
 
 
 
