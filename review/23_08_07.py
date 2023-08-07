@@ -11,9 +11,8 @@
 def abc(level):
 
     if level == 2:
-        print('#', end='')
         return
-
+    print('#', end='')
     for i in range(2):
         abc(level + 1)
 
