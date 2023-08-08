@@ -66,11 +66,10 @@
 # div2(num)
 
 
-st = input()
+st = list(input())
 
 for i in range(len(st)):
-    for j in range(len(st))
-
+    for j in range()
 
 
 
