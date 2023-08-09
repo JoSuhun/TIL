@@ -1,16 +1,16 @@
-br, lev = map(int, input().split())
+arr = [1,2,3,4]
+n = int(input())
+path = [' '] * n
 
-cnt = 0
 def abc(level):
-    global cnt
-    cnt +=1
-    if level == lev:
+    if level == n:
+        for i in range(n):
+            print(path[i], end='')
+        print()
         return
 
-    for i in range(br):
-        # cnt +=1
+    for i in range(4):
+        path[level] = i+1
         abc(level+1)
 
 abc(0)
-
-print(cnt)
