@@ -7,7 +7,7 @@ for tc in range(1, T+1):
     for i in range(M):
         cnt = 0
         for j in range(M):
-            if arrs[i][j] == 1:
+        if arrs[i][j] == 1:
                 cnt +=1
             if arrs[i][j] == 0 or j == M-1:
                 if cnt == N:

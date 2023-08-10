@@ -1,20 +1,16 @@
-n, msg = map(int,input().split())
-msg = list(str(msg))
-flag = 1
+def delete(lst):
+    end = len(lst)-1
+    while end>0:
+        for i in range(end):
+            if lst[i] == lst[i+1]:
+                lst.pop(i)
+                lst.pop(i)
+                break
+        end-=2
+    return lst
 
-def password(word):
-    global flag
-
-    if flag == 0: return
-
-    for i in range(n-1):
-        if word[i] == word[i+1]:
-            word.pop(i)
-            word.pop(i+1)
-            flag = 1
-            break
-        else: flag = 0
-    password(word)
-
-
-print(msg)
+for tc in range(1,11):
+    n, arr = map(str, input().split())
+    arr = list(arr)
+    ret = delete(arr)
+    print(f"#{tc} {''.join(ret)}")
