@@ -88,7 +88,8 @@
 # path = ['']*n
 #
 # def abc(level):
-#     # if level == 1 and path[level-1]=='B': return    # 진입 후 B로 시작한다면, 리턴해서 뺄 거야
+#     # if level == 1 and path[level-1]=='B': return
+#       # 진입 후 B로 시작한다면, 리턴해서 뺄 거야
 #     if level == n:
 #         for i in range(n):
 #             print(path[i], end='')
@@ -96,7 +97,8 @@
 #         return
 #
 #     for i in range(4):
-#         if level == 0 and i == 1: continue    # B로 시작하는 조합은 뺄 거야
+#         if level == 0 and i == 1: continue
+#           # B로 시작하는 조합은 뺄 거야
 #         path[level] = card[i]
 #         abc(level+1)
 #

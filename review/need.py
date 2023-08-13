@@ -1,45 +1,57 @@
-# 1 2 3 4 5
-# 2 4 2 1 3
-# 3 4 5 2 5
+# # [1] n개의 주사위를 던졌을 때 경우의 수
 #
-# 3 4 5 라는 패턴이 어느 좌표에 있는지 찾기!!
+# n = int(input())
+# path = [0]*n
 #
-# 정답은:
-# 0 2
-# 2 0
+# def isSUM(now):
+#     if now == n:
+#         for i in range(n):
+#             print(path[i], end=' ')
+#         print()
+#         return
+#
+#     for i in range(6):
+#         path[now] = i+1
+#         isSUM(now+1)
+#
+# isSUM(0)
 
-arrs = [[1,2,3,4,5],[2,4,2,1,3],[3,4,5,2,5]]
-pattern = [3,4,5]
 
-def findPattern(y, x):
-    for i in range(3):
-        if pattern[i] != arrs[y][x+i]:
-            return 0
-    return 1
+# [2] 미로찾기  (*************************************************)
 
-for i in range(3):
-    for j in range(3):
-        ret = findPattern(i,j)
-        if ret: print(i,j)
+# arr = [
+#     [0,0,0,0],
+#     [1,0,1,0],
+#     [1,0,1,0],
+#     [0,0,0,0]
+# ]
+#
+# directx=[-1,1,0,0]
+# directy=[0,0,-1,1]
+# used = [[0]*4 for _ in range(4)]
+# flag = 0
+#
+# def dfs(y, x):
+#     global flag
+#
+#     if y == 3 and x == 3:
+#         flag = 1
+#         return
+#
+#     for i in range(4):
+#         dy = y+directy[i]
+#         dx = x+directx[i]
+#         if dy<0 or dx<0 or dy>3 or dx>3:
+#             continue
+#         if used[dy][dx] == 1: continue
+#         if arr[dy][dx] == 1: continue
+#
+#         used[dy][dx] = 1
+#         dfs(dy,dx)
+#         if flag == 1: return
+#
+# dfs(0,0)
+# if flag == 0: print('못찾아')
+# else: print('찾아')
+#
 
-## Counting 정렬
-A = [4,7,1,4,2,4,3]
-
-bucket = [0]*11
-
-for a in A:
-    bucket[a] += 1
-
-print(bucket)
-
-for i in range(len(bucket)-1):
-    bucket[i+1]+=bucket[i]
-
-print(bucket)
-
-result = [0]*7
-
-for i in range(len(A)):
-    bucket[A[i]]-=1
-    index=bucket[A[i]]
-    result[index]=A[i]

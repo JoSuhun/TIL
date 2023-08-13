@@ -34,30 +34,30 @@
 
 
 
-# # 각 층에서 숫자 1개씩 택하여 계단을 내려옵니다.  (********************)
-# # 4개의 층에서 택한 숫자들의 합이 20 이상인 경우는 몇가지 일까요??
+# # # 각 층에서 숫자 1개씩 택하여 계단을 내려옵니다.  (********************)
+# # # 4개의 층에서 택한 숫자들의 합이 20 이상인 경우는 몇가지 일까요??
+# #
+# arr=[[4,5,2],
+#      [-2,1,6],
+#      [3,9,-4],
+#      [3,5,2]]
 #
-arr=[[4,5,2],
-     [-2,1,6],
-     [3,9,-4],
-     [3,5,2]]
-
-
-SUM = 0
-cnt = 0
-def dfs(now,SUM):
-    global cnt
-
-    if now == 4:
-        if SUM >= 20:
-            cnt+=1
-        return
-
-    for i in range(3):
-        dfs(now+1,SUM+arr[now][i])
-
-dfs(0,0)
-print(cnt)
+#
+# SUM = 0
+# cnt = 0
+# def dfs(now,SUM):
+#     global cnt
+#
+#     if now == 4:
+#         if SUM >= 20:
+#             cnt+=1
+#         return
+#
+#     for i in range(3):
+#         dfs(now+1,SUM+arr[now][i])
+#
+# dfs(0,0)
+# print(cnt)
 
 
 
