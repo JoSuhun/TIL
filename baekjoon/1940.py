@@ -10,17 +10,16 @@ arr.sort()
 
 start = 0
 end = N-1
-
 cnt = 0
 
 while start < end:
-    if arr[start] + arr[end] < M:
+    if arr[start] + arr[end] == M:
+        cnt += 1
         start += 1
+        end -= 1
     elif arr[start] + arr[end] > M:
-        end-=1
-    elif arr[start] + arr[end] == M:
+        end -= 1
+    elif arr[start] + arr[end] < M:
         start += 1
-        end -=1
-        cnt +=1
 
 print(cnt)
