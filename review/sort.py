@@ -39,7 +39,7 @@ arr=['A','C','B','F','BB','G','DD','E','B','AA']
 
 # 2. 정답을 아래에 적어 주세요
 
-ans = sorted(arr, key=lambda x: (len(x), x))
+ans= sorted(arr, key=lambda  x: (len(x),x))
 print(ans)
 
 # -----------------------------------------------------------------------------
@@ -52,7 +52,7 @@ arr=['A','C','B','F','BB','G','DD','E','B','AA']
 
 # 3. 정답을 아래에 적어 주세요
 
-ans = sorted(arr, key=lambda x: (-len(x), x))
+ans = sorted(arr, key=lambda x: (-len(x),x))
 print(ans)
 
 # -----------------------------------------------------------------------------
@@ -64,7 +64,7 @@ arr=['A','C','B','F','BB','G','DD','E','B','AA']
 
 # 4. 정답을 아래에 적어 주세요
 
-ans = sorted(arr, key=lambda x: (-len(x), x), reverse=True)
+ans = sorted(arr, key=lambda x: (-len(x),x),reverse=True)
 print(ans)
 
 # -----------------------------------------------------------------------------
@@ -102,7 +102,7 @@ arr = ['A', 'B', 'Z', 'Z', 'A', 'Y', 'Y', 'Y', 'A', 'T']
 
 # 7. 정답을 아래에 적어 주세요
 
-ans = sorted(arr, key=lambda x: (-arr.count(x), x))
+ans = sorted(arr, key=lambda x: (-arr.count(x),x))
 print(ans)
 
 # -----------------------------------------------------------------------------
