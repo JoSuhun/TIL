@@ -5,23 +5,18 @@ for tc in range(1, T+1):
     nlst = list(map(int, input().split()))
     mlst = list(map(int, input().split()))
 
-    MAX = -1
-    used = [0]*n
-    path = []
-    def choice(now, start, SUM):
-        global MAX
-        if now == min(n,m):
-            MAX = max(MAX, SUM)
-            return
+    nlst.sort()
+    mlst.sort()
 
-        for i in range(start, m):
-            for j in range(n):
-                if nlst[j]>mlst[i]: continue
-                if used[j] == 1: continue
-                used[j] = 1
-                path.append(nlst[j])
-                choice(now+1, i+1, SUM+nlst[j])
-                used[j] = 0
+    cidx = n-1
+    bidx = m-1
+    SUM = 0
 
-    choice(0,0,0)
-    print(MAX)
+    while cidx >= 0 and bidx >= 0:
+        if nlst[cidx] <= mlst[bidx]:
+            SUM += nlst[cidx]
+            cidx-=1
+            bidx-=1
+        else:
+            cidx-=1
+    print(f'#{tc} {SUM}')
