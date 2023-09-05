@@ -11,11 +11,14 @@ def change(idx):
             now[i] = 1
 
 cnt = 0
-
-for i in range(1, n):
-    change(i)
-    cnt += 1
+change(0)
+for i in range(1, n-1):
+    if now[i] != fin[i]:
+        change(i+1)
+        cnt += 1
     if now == fin: break
 
-if now != fin: print(-1)
+print(now)
+if now != fin:
+    print(-1)
 else: print(cnt)
