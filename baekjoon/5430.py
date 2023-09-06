@@ -1,35 +1,29 @@
+from collections import deque
 T = int(input())
 
-def rev(lst):
-    new = [0]*n
-    now = 0
-    while now<n:
-        new[now] = lst[n-1-now]
-        now += 1
-    return new
-
-def delete(lst):
-    lst.pop(0)
-    return lst
-
-
-for tc in range(1, T+1):
+for tc in range(T):
     msg = input()
     n = int(input())
+    st = deque(input()[1:-1].split(','))
     if n == 0:
-        print('error')
+        st = deque()
+
+
+    rev = 0
+    for m in msg:
+        if m == 'R':
+            rev += 1
+        elif m == 'D':
+            if len(st) > 0:
+                if rev%2==1:
+                    st.pop()
+                else: st.popleft()
+            else:
+                print('error')
+                break
     else:
-        st = input()
-        st = st[1:-1]
-        q = list(map(int, st.split(',')))
-        try:
-            for m in msg:
-                if m == 'R':
-                    q = rev(q)
-                elif m == 'D':
-                    q = delete(q)
-            print('[',end='')
-            print(*q, sep=',',end='')
-            print(']')
-        except:
-            print('error')
+        if rev%2 == 0:
+            print('[' + ','.join(st) + ']')
+        else:
+            st.reverse()
+            print('[' + ','.join(st) + ']')
