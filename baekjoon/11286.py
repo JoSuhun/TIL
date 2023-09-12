@@ -20,6 +20,8 @@
 # 우선순위 큐
 from queue import PriorityQueue
 import sys
+print = sys.stdout.write
+input = sys.stdin.readline
 
 q = PriorityQueue()
 
@@ -30,7 +32,7 @@ for i in range(n):
         q.put((abs(x), x))
     else:
         if q.empty():
-            print(0)
+            print('0\n')
         else:
             ret = q.get()
-            print(ret[1])
+            print(str(ret[1])+'\n')
