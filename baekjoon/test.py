@@ -1,6 +1,7 @@
-n = int(input())
-bombs = list(map(int, input().split()))
-start = 0
-end = 1
-cnt = 0
-for i in range()
+def isPrime(x):
+    for i in range(2, int(x**0.5)+1):
+        if x % i == 0:
+            return 0
+    return 1
+
+print(isPrime(3))
