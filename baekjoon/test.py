@@ -1,7 +1,23 @@
-def isPrime(x):
-    for i in range(2, int(x**0.5)+1):
-        if x % i == 0:
-            return 0
-    return 1
+def solution(stones, k):
 
-print(isPrime(3))
+    now = 0
+    while True:
+        cnt = 0
+        for i in range(len(stones)):
+            if cnt == k:
+                break
+            if stones[i] != 0:
+                stones[i] -= 1
+            else:
+                cnt += 1
+
+        now += 1
+        if cnt >= k: break
+
+    return now
+
+stones = list(map(int, input()[1:-2].split(',')))
+k = int(input())
+
+ret = solution(stones,k)
+print(ret)
