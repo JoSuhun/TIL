@@ -1,4 +1,8 @@
-n = int(input())
+m = int(input())
+edge = []
+for _ in range(m):
+    edge.append(input().split())
+
 
 arr = [0]*200
 def findboss(mem):
@@ -12,55 +16,21 @@ def findboss(mem):
 def union(a, b):
     global arr
     fa, fb = findboss(a), findboss(b)
-    if fa == fb: return 1
-    arr[ord(fa)] = fb
+    if fa == fb:
+        return 1
+    else: arr[ord(fa)] = fb
 
 union('A','B')
 union('B','C')
-union('H','G')
 union('E','F')
 union('F','D')
 union('I','J')
-print(arr[65:])
+union('H','G')
 
 cnt = 4
-for _ in range(n):
-    a, b = map(str, input().split())
-    fa, fb = findboss(a), findboss(b)
-    if fa != fb:
+for i in range(m):
+    a, b = edge[i]
+    if findboss(a) != findboss(b):
         union(a, b)
         cnt -=1
 print(f'{cnt}개')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,23 +1,23 @@
-def solution(stones, k):
+n, k = map(int, input().split())
+dp = [[10001]*(k+1) for _ in range(n+1)]
+dp[0][0] = 0
+coin = [0]
+for _ in range(1, n+1):
+    coin.append(int(input()))
+coin.sort()
 
-    now = 0
-    while True:
-        cnt = 0
-        for i in range(len(stones)):
-            if cnt == k:
-                break
-            if stones[i] != 0:
-                stones[i] -= 1
+for i in range(1, n+1):
+    for j in range(1, k+1):
+        mok = j // coin[i]
+        if j%coin[i] == 0: dp[i][j] = mok
+        else:
+            if mok == 0:
+                dp[i][j] = dp[i-1][j]
             else:
-                cnt += 1
+                dp[i][j] = min(dp[i-1][j], dp[i][j-coin[i]]+1)
 
-        now += 1
-        if cnt >= k: break
-
-    return now
-
-stones = list(map(int, input()[1:-2].split(',')))
-k = int(input())
-
-ret = solution(stones,k)
-print(ret)
+if dp[n][k] >= 10001:
+    print(-1)
+else:
+    print(dp[n][k])
+print(dp)
