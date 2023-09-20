@@ -26,7 +26,7 @@ union('E','F')
 union('F','D')
 union('I','J')
 union('H','G')
-
+print(arr)
 cnt = 4
 for i in range(m):
     a, b = edge[i]
