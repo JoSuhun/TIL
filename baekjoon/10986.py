@@ -1,16 +1,20 @@
-# 구간의 합 먼저..
-N, M = map(int, input().split())
+import sys
+input = sys.stdin.readline
+n, m = map(int, input().split())
 nums = list(map(int, input().split()))
+idx = [0]*m
+ans = 0
 
-SUM_lst = [0]
-SUM = 0
+for i in range(1, n):
+    nums[i] += nums[i-1]
+for i in range(n):
+    nums[i] = nums[i]%m
+
 for num in nums:
-    SUM += num
-    SUM_lst.append(SUM)
+    if num == 0: ans += 1
+    idx[num]+=1
 
-cnt = 0
-for i in range(len(SUM_lst)-1, 0, -1):
-    for j in range(i-1, -1, -1):
-        if (SUM_lst[i]-SUM_lst[j]) % M == 0:
-            cnt += 1
-print(cnt)
+for i in range(m):
+    if idx[i]>1:
+        ans += idx[i]*(idx[i]-1)//2
+print(ans)
