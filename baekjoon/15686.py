@@ -13,7 +13,6 @@ for i in range(n):
         if mapp[i][j] == 2:
             chicken.append((i, j))
 
-choice = deque([])
 def find(start, cnt):
     global MIN, check
     if cnt == m:
