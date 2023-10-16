@@ -9,6 +9,6 @@ def make(start, now):
         return
     for i in range(start, n):
         path.append(lst[i])
-        make(i+1, now+1)
+        make(i, now+1)
         path.pop()
 make(0, 0)
