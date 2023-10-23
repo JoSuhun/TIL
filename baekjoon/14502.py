@@ -13,6 +13,9 @@ for i in range(n):
             virusPoint.append((i, j))
 
 def virus():
+    global mapp
+    backup = copy.deepcopy(mapp)
+
     cnt = 0
     q = deque(virusPoint)
     directy = [0, 0, 1, -1]
@@ -32,19 +35,17 @@ def virus():
         for j in range(m):
             if mapp[i][j] == 0:
                 cnt += 1
+    mapp = backup
     return cnt
 
-backup = copy.deepcopy(mapp)
 used = [[0] * m for _ in range(n)]
 MAX = -1
 def make(cnt):
-    global mapp, MAX
+    global MAX, mapp
 
     if cnt == 3:
-        print(mapp)
         ret = virus()
         MAX = max(MAX, ret)
-        mapp = backup
         return
 
     for i in range(n):
