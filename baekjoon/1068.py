@@ -8,6 +8,7 @@ def find(delete):
         if node[i] == delete:
             find(i)
 
+
 find(delete)
 
 cnt = 0
