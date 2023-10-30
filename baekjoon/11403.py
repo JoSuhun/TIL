@@ -1,17 +1,21 @@
-def find(SUM):
-    global cnt
-    lst = [1, 2, 3]
-    if SUM == num:
-        cnt += 1
-        return
-    elif SUM > num:
-        return
-    for i in range(3):
-        find(SUM+lst[i])
+n = int(input())
+INF = 21e8
+mapp = [list(map(int, input().split())) for _ in range(n)]
+dist = [[INF]*n for _ in range(n)]
+for i in range(n):
+    for j in range(n):
+        if mapp[i][j] == 1:
+            dist[i][j] = 1
+for k in range(n):
+    for i in range(n):
+        for j in range(n):
+            if dist[i][k]+dist[k][j] < dist[i][j]:
+                dist[i][j] = 1
 
-T = int(input())
-for tc in range(T):
-    num = int(input())
-    cnt = 0
-    find(0)
-    print(cnt)
+for i in range(n):
+    for j in range(n):
+        if dist[i][j] == INF:
+            dist[i][j] = 0
+
+for d in dist:
+    print(*d)
