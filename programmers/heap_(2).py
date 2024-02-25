@@ -1,24 +1,24 @@
 jobs = [[0, 3], [1, 9], [2, 6]]
-import heapq, math
+import heapq
 
 def solution(jobs):
-
-    answer = 0
-    total, ready, start = 0, 0, -1 # total 종료 시간, ready 요청 들어온 시간
-    level = len(jobs)
+    answer, ready, now = 0
+    start = -1
     heap = []
-    
-    while ready < level:
+
+    while ready < len(jobs):
         for job in jobs:
-            heapq.heappush(heap, [job[1],job[0]]) # 소요시간이 짧은 순서대로 heap 정렬
-        while heap:
-            if start <= ready <= total:
-                disk = heapq.heappop() # [소요시간, 요청 들어온 시간]
-                total += disk[0]
-                
-
-    
-
+            if start < now <= ready:
+                heapq.heappush([job[1], job[0]])
+        if len(heap) > 0:
+            cur = heapq.heappop()
+            start = now
+            now += cur[0]
+            answer += (now-cur[1])
+            ready += 1
+        else:
+            now += 1
     return answer
+
 
 print(solution(jobs))
